@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-})
-export class App {
-  protected readonly title = signal('sistema-usuarios');
+import { Component } from '@angular/core'; 
+import { Cadastro } from './cadastro/cadastro'; 
+ 
+@Component({ 
+  selector: 'app-root', 
+  imports: [Cadastro], 
+  templateUrl: './app.html', 
+  styleUrl: './app.css' 
+}) 
+export class App { 
+  title = 'sistema-usuarios'; 
 }
