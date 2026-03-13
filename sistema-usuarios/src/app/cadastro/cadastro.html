@@ -21,16 +21,23 @@ seu e-mail principal" />
              <div class="mb-3"> 
               <label for="email" class="form-label">E-mail</label> 
               <input type="email" class="form-control" id="email" placeholder="Digite 
-seu e-mail secundário" /> 
+seu e-mail secundáriong " /> 
             </div> 
  
             <div class="mb-3"> 
               <label for="senha" class="form-label">Senha</label> 
               <input type="password" class="form-control" id="senha" 
-placeholder="Digite sua senha" /> 
+placeholder="Digite sua senha"
+#senhaInput
+(input) ="validarSenha(senhaInput.value)"
+/> 
             </div> 
- 
-            <div class="mb-3"> 
+          <label [ngStyle]="{color:regraMinimoCaractere ? 'green' : 'red'}"><i>A senha deve ter no minimo 8 caractere</i></label><br>
+          <label [ngStyle]="{color:regraMaximocaractere ? 'green' : 'red'}"><i>A senha deve ter no maximo 16 caractere</i></label><br>
+          <label [ngStyle]="{color:regraLetraMaiuscula ? 'green' : 'red'}"><i>A senha deve ter ao menos uma letra maiuscula</i></label><br>  
+          <label [ngStyle]="{color:regraCaractereEspecial ? 'green' : 'red'}"><i>A senha deve ter no minimo um caractere especial </i></label><br>
+          <label [ngStyle]="{color:regraNumerosLetras ? 'green' : 'red'}"><i>A senha deve ter numeros e letras</i></label><br>
+          <div class="mb-3"> 
               <label for="telefone" class="form-label">Telefone</label> 
               <input type="text" class="form-control" id="telefone" 
 placeholder="Digite seu telefone" /> 
