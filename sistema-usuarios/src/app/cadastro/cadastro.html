@@ -6,22 +6,22 @@
         <div class="card-body"> 
           <h2 class="text-center mb-4">Cadastro de Usuário Para Acessar o Sistema</h2> 
  
-          <form> 
+          <form  [formGroup]="form"(ngSubmit) = "onSubmit()"> 
             <div class="mb-3"> 
               <label for="nome" class="form-label">Nome completo</label> 
               <input type="text" class="form-control" id="nome" placeholder="Digite 
-seu nome completo sem abreviação" /> 
+seu nome completo sem abreviação" formControlName = "nome" /> 
             </div> 
  
             <div class="mb-3"> 
               <label for="email" class="form-label">E-mail</label> 
               <input type="email" class="form-control" id="email" placeholder="Digite 
-seu e-mail principal" /> 
+seu e-mail principal"  formControlName = "email"/> 
             </div> 
              <div class="mb-3"> 
               <label for="email" class="form-label">E-mail</label> 
               <input type="email" class="form-control" id="email" placeholder="Digite 
-seu e-mail secundáriong " /> 
+seu e-mail secundáriong " formControlName = "email"/> 
             </div> 
  
             <div class="mb-3"> 
@@ -29,7 +29,7 @@ seu e-mail secundáriong " />
               <input type="password" class="form-control" id="senha" 
 placeholder="Digite sua senha"
 #senhaInput
-(input) ="validarSenha(senhaInput.value)"
+(input) ="validarSenha(senhaInput.value)" formControlName = "senha"
 /> 
             </div> 
           <label [ngStyle]="{color:regraMinimoCaractere ? 'green' : 'red'}"><i>A senha deve ter no minimo 8 caractere</i></label><br>
@@ -55,16 +55,17 @@ nascimento</label>
             </div> 
  
             <div class="mb-3"> 
-              <label for="endereco" class="form-label">Endereço</label> 
-              <input type="text" class="form-control" id="endereco" 
-placeholder="Digite seu endereço" required/> 
+              <label for="cep" class="form-label">cep</label> 
+              <input type="text" class="form-control" id="cep" 
+placeholder="Digite seu cep" required formControlName="cep"/> 
             </div> 
+            <div><button type="button" (click)="buscarCep">Buscar</button></div>
              <div class="mb-3"> 
               <label for="endereco" class="form-label">Logradouro</label> 
               <input type="text" class="form-control" id="endereco" 
-placeholder="Digite seu endereço" /> 
+placeholder="Digite seu endereço" formControlName="logradouro"/> 
             </div> 
- 
+            
             <div class="mb-3"> 
               <label for="cidade" class="form-label">Cidade</label> 
               <input type="text" class="form-control" id="cidade" placeholder="Digite 
